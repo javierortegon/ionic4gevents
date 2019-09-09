@@ -21,7 +21,8 @@ export class ConferencistasPage implements OnInit {
       }
       ,error =>{
         console.log("Error: " + error);
-      })
+      }
+    )
   }
 
   ngOnInit() {

@@ -68,5 +68,13 @@ export class EventoService {
     });
     return this.http.get( apiUrl + 'get_expositores_detalle/' + idConferencis ,{ headers: httpHeaders }) 
   }
+
+  getAgendaServi(idEvento:any){
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    return this.http.get( apiUrl + 'get_agendas_apk/' + idEvento ,{ headers: httpHeaders }) 
+  }
   
 }
