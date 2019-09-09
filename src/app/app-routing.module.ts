@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'deta-stand/:stand', loadChildren: './pages/deta-stand/deta-stand.module#DetaStandPageModule' },
   { path: 'stands/:event', loadChildren: './pages/stands/stands.module#StandsPageModule' },
   { path: 'deta-asistente/:asistente', loadChildren: './pages/deta-asistente/deta-asistente.module#DetaAsistentePageModule' },
   { path: 'asistentes/:event', loadChildren: './pages/asistentes/asistentes.module#AsistentesPageModule' },
@@ -22,7 +23,6 @@ const routes: Routes = [
   { path: 'maps', loadChildren: './maps/maps.module#MapsPageModule' },
   { path: 'video-playlist', loadChildren: './video-playlist/video-playlist.module#VideoPlaylistPageModule' },
   { path: '**', redirectTo: 'page-not-found' },
-  { path: 'deta-stand', loadChildren: './pages/deta-stand/deta-stand.module#DetaStandPageModule' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

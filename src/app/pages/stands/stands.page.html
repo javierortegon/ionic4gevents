@@ -16,18 +16,22 @@
             <ion-grid class="grid NoPadding">
               <ion-row class="row">
                 <ion-col class="col" col-3>
-                  <div>
-                    <div class="avatarCard sombraLogo">
-                      <img src="http://localhost/middleware/public/images/events/{{dataExpositor.imagen}}">
-                      <!--  <img class=" detailsimgSpeaker"   src="assets/img/607x411.png"> -->
-                    </div>
-                  </div>
+                  <a [routerLink]="['/deta-stand/', dataExpositor.id]">
+                      <div>
+                          <div class="avatarCard sombraLogo">
+                            <img src="http://localhost/middleware/public/images/events/{{dataExpositor.imagen}}">
+                            <!--  <img class=" detailsimgSpeaker"   src="assets/img/607x411.png"> -->
+                          </div>
+                      </div>
+                  </a>    
                 </ion-col>
                 <ion-col class="col">
+                    <a [routerLink]="['/deta-stand/', dataExpositor.id]">
                   <div class="LongDivDot">
                     <h2 class="LongTextDot"> {{dataExpositor.compania}} </h2>
                     <p>#Stand: {{ dataExpositor.id }}</p>
                   </div>
+                </a> 
                 </ion-col>
                
               </ion-row>
