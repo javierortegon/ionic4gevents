@@ -52,5 +52,21 @@ export class EventoService {
     });
     return this.http.get( apiUrl + 'get_stand_detalle/' + idStand ,{ headers: httpHeaders }) 
   }
+
+  getConferencistasServi(idEvento:any ):Observable<any>{
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    return this.http.get( apiUrl + 'get_expositores_apk/' + idEvento ,{ headers: httpHeaders }) 
+  }
+
+  getDetallestConferencistas(idConferencis:any ):Observable<any>{
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    return this.http.get( apiUrl + 'get_expositores_detalle/' + idConferencis ,{ headers: httpHeaders }) 
+  }
   
 }

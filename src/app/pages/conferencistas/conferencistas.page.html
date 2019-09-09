@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>conferencistas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div >
+    <ion-card class="card card-ios  shadowCards heightCards borderCard marginBottomCard" *ngFor="let dataConferencista of dataConferencistas">
+      <ion-item class="item item-block item-ios">
+
+            <ion-grid class="grid NoPadding">
+              <ion-row class="row">
+                <ion-col class="col" col-3>
+                  <a [routerLink]="['/deta-conferencis/', dataConferencista.id]">
+                      <div>
+                          <div class="avatarCard sombraLogo">
+                            <img src="http://localhost/middleware/public/images/events/{{dataConferencista.foto_perfil}}">
+                            <!--  <img class=" detailsimgSpeaker"   src="assets/img/607x411.png"> -->
+                          </div>
+                      </div>
+                  </a>    
+                </ion-col>
+                <ion-col class="col">
+                    <a [routerLink]="['/deta-conferencis/', dataConferencista.id]">
+                  <div class="LongDivDot">
+                    <h2 class="LongTextDot"> {{dataConferencista.nombre + ' ' + dataConferencista.apellido}} </h2>
+                    <p>#Stand: {{ dataConferencista.cargo }}</p>
+                    <p>#Stand: {{ dataConferencista.compania }}</p>
+                  </div>
+                </a> 
+                </ion-col>
+               
+              </ion-row>
+
+            </ion-grid>
+
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>

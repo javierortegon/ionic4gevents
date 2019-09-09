@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'deta-conferencis/:conferen', loadChildren: './pages/deta-conferencis/deta-conferencis.module#DetaConferencisPageModule' },
+  { path: 'conferencistas/:event', loadChildren: './pages/conferencistas/conferencistas.module#ConferencistasPageModule' },
   { path: 'deta-stand/:stand', loadChildren: './pages/deta-stand/deta-stand.module#DetaStandPageModule' },
   { path: 'stands/:event', loadChildren: './pages/stands/stands.module#StandsPageModule' },
   { path: 'deta-asistente/:asistente', loadChildren: './pages/deta-asistente/deta-asistente.module#DetaAsistentePageModule' },
