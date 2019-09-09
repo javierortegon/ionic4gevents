@@ -10,11 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetaAsistentePage implements OnInit {
 
+  imgProfile:string
+  nombre:string
+  email:string
+  celular:string
+  compania:string
+
   constructor(public eventoService: EventoService,private route: ActivatedRoute,) { }
 
   getAsistente(asistente){
     this.eventoService.getDetallesAsistente(asistente).subscribe(
       data =>{
+        this.imgProfile = this.eventoService.globalUrlImages + data.usuario['avatar']
+        this.nombre = data.usuario['nombre'] + " " + data.usuario['apellido']
+        this.email = data.usuario['email']
+        this.celular = data.usuario['celular']
+        this.compania = data.usuario['compania']
         console.log(data)
       }
       ,error =>{
@@ -24,6 +35,7 @@ export class DetaAsistentePage implements OnInit {
 
   ngOnInit() {
     console.log(this.route.snapshot.params['asistente'])
+    this.getAsistente(this.route.snapshot.params['asistente'])
   }
 
 
