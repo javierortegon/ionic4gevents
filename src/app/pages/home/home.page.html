@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <img [src]="banner" alt="">
+    <img [src]="icono" alt="">
+    <div class="det-padding">
+      <h4 class="news-title eventTitle">
+        {{ event.nombre }}
+      </h4>
+      <div class=" col-40 typeEvent2 center">
+        <span>
+         {{ event.clase }}
+        </span>
+      </div>
+    </div>
+  
+    <div class=" details-writer">
+      <ion-grid>
+        <ion-row class="row">
+          <ion-col class="lineRight">
+            <div>
+                <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+                <div class="date1 text-center">
+                {{ event.fecha_inicio | date }}
+              </div>
+            </div>
+          </ion-col>
+          <ion-col class="lineRight">
+            <div>
+                <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+                <div class="date1 text-center">
+                {{ event.fecha_inicio | date:'HH:mm a' }}
+              </div>
+            </div>
+          </ion-col>
+          <ion-col class="lineRight">
+            <div >
+                <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+                <div class="date1 text-center">
+                {{ event.lugar }}
+              </div>
+            </div>
+          </ion-col>
+          <ion-col class="">
+            <div >
+                <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+                <div class="date1 text-center">
+                Chat
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+  
+        <div >
+          <ion-row class="row lineTopAsistir" (click)="goToAttendantPage()">
+            <ion-col class="col">
+              <div class="asistentesTittle">
+                  <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+                  {{asistentes }} personas asistirán
+              </div>
+              <h3>Menu</h3>
+            </ion-col>
+  
+  
+          </ion-row>
+        </div>
+  
+      </ion-grid>
+  
+    </div>
+
+  <ion-row>
+    <ion-col size="4"> 
+      <ion-tab-button  [routerLink]="'/asistentes/' + evento">
+        <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+        <ion-label class="tab-title">Asistentes</ion-label>
+      </ion-tab-button>
+    </ion-col>
+    <ion-col size="4"> 
+        <ion-tab-button >
+            <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+            <ion-label class="tab-title">Notifications</ion-label>
+          </ion-tab-button>
+    </ion-col>
+    <ion-col size="4"> 
+        <ion-tab-button >
+            <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+            <ion-label class="tab-title">Notifications</ion-label>
+          </ion-tab-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

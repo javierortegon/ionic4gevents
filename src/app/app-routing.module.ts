@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'deta-asistente/:asistente', loadChildren: './pages/deta-asistente/deta-asistente.module#DetaAsistentePageModule' },
+  { path: 'asistentes/:event', loadChildren: './pages/asistentes/asistentes.module#AsistentesPageModule' },
+  { path: 'homeNew', loadChildren: './pages/home/home.module#HomePageModule' },
   { path: '', redirectTo: '/walkthrough', pathMatch: 'full' },
   { path: 'walkthrough', loadChildren: './walkthrough/walkthrough.module#WalkthroughPageModule' },
   { path: 'getting-started', loadChildren: './getting-started/getting-started.module#GettingStartedPageModule' },
@@ -17,7 +20,8 @@ const routes: Routes = [
   { path: 'firebase', loadChildren: './firebase/firebase-integration.module#FirebaseIntegrationModule' },
   { path: 'maps', loadChildren: './maps/maps.module#MapsPageModule' },
   { path: 'video-playlist', loadChildren: './video-playlist/video-playlist.module#VideoPlaylistPageModule' },
-  { path: '**', redirectTo: 'page-not-found' }
+  { path: '**', redirectTo: 'page-not-found' },
+  { path: 'stands', loadChildren: './pages/stands/stands.module#StandsPageModule' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
