@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventoService } from './../../services/evento.service';
 
 @Component({
   selector: 'app-stands',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stands.page.scss'],
 })
 export class StandsPage implements OnInit {
+  dataExpositores: any[] = [];
 
-  constructor() { }
+  constructor(public api: EventoService) {
+  }
+
+  getStands(){
+    this.api.getStandEventServi(2).subscribe(
+      data =>{
+        this.dataExpositores = data['stands']
+        console.log(this.dataExpositores)
+      }
+      ,error =>{
+        console.log("noo");
+      })
+  }
 
   ngOnInit() {
+    this.getStands()
   }
 
 }

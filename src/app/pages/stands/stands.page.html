@@ -1,9 +1,42 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>stands</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <div >
+
+        <ion-card class="card card-ios  shadowCards heightCards borderCard marginBottomCard" *ngFor="let dataExpositor of dataExpositores">
+          <ion-item class="item item-block item-ios">
+
+            <ion-grid class="grid NoPadding">
+              <ion-row class="row">
+                <ion-col class="col" col-3>
+                  <div>
+                    <div class="avatarCard sombraLogo">
+                      <img src="http://localhost/middleware/public/images/events/{{dataExpositor.imagen}}">
+                      <!--  <img class=" detailsimgSpeaker"   src="assets/img/607x411.png"> -->
+                    </div>
+                  </div>
+                </ion-col>
+                <ion-col class="col">
+                  <div class="LongDivDot">
+                    <h2 class="LongTextDot"> {{dataExpositor.compania}} </h2>
+                    <p>#Stand: {{ dataExpositor.id }}</p>
+                  </div>
+                </ion-col>
+               
+              </ion-row>
+
+            </ion-grid>
+
+          </ion-item>
+        </ion-card>
+
+      </div>
 
 </ion-content>
