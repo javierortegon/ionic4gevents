@@ -6,7 +6,10 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-deta-asistente',
   templateUrl: './deta-asistente.page.html',
-  styleUrls: ['./deta-asistente.page.scss'],
+  styleUrls: [
+    './styles/real-state-details.page.scss',
+    './styles/real-state-details.shell.scss'
+  ]
 })
 export class DetaAsistentePage implements OnInit {
 

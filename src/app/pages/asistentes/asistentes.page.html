@@ -11,14 +11,14 @@
     <ion-card class="" *ngFor="let asistente of dataAssis">
         <ion-card-content  class="paddingCard">
           <ion-row>
-              <ion-col col-2 class="paddingTopX" [routerLink]="['/deta-asistente/', asistente.id]">
+              <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-asistente/', asistente.id]">
                 <a [routerLink]="['/deta-asistente/', asistente.id]">
                   <div class="logoImgPeople animated tada shadowImg" height="120">
                     <img class=" detailsimgSpeaker" src="https://testing.gevents.co/middleware/public/images/events/user_avatar.jpg">
                   </div>
                 </a>
               </ion-col>
-              <ion-col col-8 class="">
+              <ion-col size="9" class="" [routerLink]="['/deta-asistente/', asistente.id]">
                 <div class="" >
                   <b>{{asistente.nombre}}<br> {{asistente.apellido}}</b>
                 </div>
