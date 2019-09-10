@@ -42,7 +42,7 @@ export class EventoService {
       'Content-Type': 'application/json',
       'Accept': 'application/json' 
     });
-    return this.http.get( apiUrl + 'get_expositores_apk/' + idEvento ,{ headers: httpHeaders }) 
+    return this.http.get( apiUrl + 'get_stands/' + idEvento ,{ headers: httpHeaders }) 
   }
 
   getDetallesStand(idStand:any ):Observable<any>{

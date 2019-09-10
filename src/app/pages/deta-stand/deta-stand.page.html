@@ -1,19 +1,86 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>deta-stand</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button ></ion-back-button>
+      </ion-buttons>
+      <ion-title>Stand</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content>
+  <ion-row>
     <ion-col size="12" >
-        <img class=" detailsimgSpeaker" [src]="imagen">
-      </ion-col>
-      <br>
-      <p>
-        Compañia : {{compania}}<br>
-        Numero Stand : {{numeStand}}<br>
-        Perfil : {{perfilEmpresa}}<br>
-        Movil : {{movil}}<br>
-        Website : {{compania}}<br>
-      </p>
+      <img class=" detailsimgSpeaker" [src]="imagen">
+    </ion-col>
+  </ion-row>
+    
+      <ion-grid>
+
+          <ion-row class="ion-justify-content-start">
+            <ion-col size="4">
+              <div>
+                  <h4>Compañia</h4>
+              </div>
+            </ion-col>
+            <ion-col size="8">
+              <div>
+                  {{compania}}
+              </div>
+            </ion-col>
+          </ion-row>
+    
+            <ion-row class="ion-justify-content-start">
+            <ion-col size="4">
+                <div>
+                   <h4>Numero Stand</h4> 
+                </div>
+              </ion-col>
+              <ion-col size="8">
+                <div>
+                    {{numeStand}}
+                </div>
+              </ion-col>
+            </ion-row>
+    
+            <ion-row class="ion-justify-content-start">
+              <ion-col size="4">
+                  <div>
+                      <h4>Perfil</h4> 
+                  </div>
+                </ion-col>
+                <ion-col size="8">
+                  <div>
+                      {{perfilEmpresa}}
+                  </div>
+                </ion-col>
+              </ion-row>
+    
+              <ion-row class="ion-justify-content-start">
+                <ion-col size="4">
+                    <div>
+                        <h4>Movil</h4>
+                    </div>
+                  </ion-col>
+                  <ion-col size="8">
+                    <div>
+                        {{movil}}
+                    </div>
+                  </ion-col>
+                </ion-row>
+          
+                <ion-row class="ion-justify-content-start">
+                    <ion-col size="4">
+                        <div>
+                            <h4>Website</h4>
+                        </div>
+                      </ion-col>
+                      <ion-col size="8">
+                        <div>
+                            {{compania}}
+                        </div>
+                      </ion-col>
+                    </ion-row>
+        
+          
+          </ion-grid>
 </ion-content>

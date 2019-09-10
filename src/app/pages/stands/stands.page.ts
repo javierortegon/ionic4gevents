@@ -16,7 +16,7 @@ export class StandsPage implements OnInit {
     this.api.getStandEventServi(2).subscribe(
       data =>{
         this.dataExpositores = data['stands']
-        console.log(this.dataExpositores)
+        console.log(data)
       }
       ,error =>{
         console.log("noo");
