@@ -4,7 +4,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  styleUrls: [
+    './travel-listing.page.scss',
+    './travel-listing.shell.scss'
+  ]
 })
 export class HomePage implements OnInit {
 

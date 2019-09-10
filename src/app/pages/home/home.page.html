@@ -1,95 +1,100 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
 
-    <img [src]="banner" alt="">
-    <img [src]="icono" alt="">
-    <div class="det-padding">
-      <h4 class="news-title eventTitle">
-        {{ event.nombre }}
-      </h4>
-      <div class=" col-40 typeEvent2 center">
-        <span>
-         {{ event.clase }}
-        </span>
-      </div>
+  <ng-container >
+    <div class="listing-item" >
+      <ion-row class="image-row">
+        <ion-col size="12">
+          <app-image-shell [mode]="'cover'" class="add-overlay item-image" [src]="banner">
+            <app-aspect-ratio [ratio]="{w:3, h:2}">
+              <div class="content-inside-item-image">
+                <div class="item-icon">
+                  <app-aspect-ratio [ratio]="{w:1, h:1}">
+                    <app-image-shell src="./assets/sample-images/travel/TravelIcon1.png" class="icon-image"></app-image-shell>
+                  </app-aspect-ratio>
+                </div>
+               
+              </div>
+            </app-aspect-ratio>
+          </app-image-shell>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="info-row">
+        <ion-col class="main-info-col">
+          <h3 class="item-name">
+            <a class="name-anchor" >
+              <app-text-shell animation="bouncing" [data]="event.nombre"></app-text-shell>
+            </a>
+          </h3>
+          <p class="item-description">
+            <app-text-shell animation="bouncing" [data]="event.clase" lines="3"></app-text-shell>
+          </p>
+          <p class="item-address">
+            <app-text-shell animation="bouncing" [data]="event.fecha_inicio | date"></app-text-shell>
+          </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="stats-row">
+        <ion-col size="4" class="item-rating">
+          <span class="rating-value">
+            <app-text-shell [data]="event.fecha_inicio | date"></app-text-shell>
+          </span>
+          <ion-icon class="stats-icon" src="./assets/sample-icons/travel/star.svg"></ion-icon>
+        </ion-col>
+        <ion-col size="3" class="item-reviews">
+          <span class="reviews-count">
+            <app-text-shell [data]="event.fecha_inicio | date:'HH:mm a'"></app-text-shell>
+          </span>
+          <ion-icon class="stats-icon" src="./assets/sample-icons/travel/comments.svg"></ion-icon>
+        </ion-col>
+
+        <ion-col size="4" class="item-reviews">
+          <span class="reviews-count">
+            <app-text-shell [data]="event.lugar"></app-text-shell>
+          </span>
+          <ion-icon class="stats-icon" src="./assets/sample-icons/travel/comments.svg"></ion-icon>
+        </ion-col>
+      </ion-row>
     </div>
+  </ng-container>
   
-    <div class=" details-writer">
-      <ion-grid>
-        <ion-row class="row">
-          <ion-col class="lineRight">
-            <div>
-                <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
-                <div class="date1 text-center">
-                {{ event.fecha_inicio | date }}
-              </div>
-            </div>
-          </ion-col>
-          <ion-col class="lineRight">
-            <div>
-                <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
-                <div class="date1 text-center">
-                {{ event.fecha_inicio | date:'HH:mm a' }}
-              </div>
-            </div>
-          </ion-col>
-          <ion-col class="lineRight">
-            <div >
-                <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
-                <div class="date1 text-center">
-                {{ event.lugar }}
-              </div>
-            </div>
-          </ion-col>
-          <ion-col class="">
-            <div >
-                <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
-                <div class="date1 text-center">
-                Chat
-              </div>
-            </div>
+  
+  <div class=" details-writer">
+    <ion-grid>
+      <div>
+        <ion-row class="row lineTopAsistir" >
+          <ion-col class="col">
+            <h3>Menu</h3>
           </ion-col>
         </ion-row>
-  
-        <div >
-          <ion-row class="row lineTopAsistir" (click)="goToAttendantPage()">
-            <ion-col class="col">
-              <div class="asistentesTittle">
-                  <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
-                  {{asistentes }} personas asistirán
-              </div>
-              <h3>Menu</h3>
-            </ion-col>
-  
-  
-          </ion-row>
-        </div>
-  
-      </ion-grid>
-  
-    </div>
+      </div>
+    </ion-grid>
+  </div>
 
   <ion-row>
     <ion-col size="4"> 
       <ion-tab-button  [routerLink]="'/asistentes/' + evento">
-        <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+        <ion-icon src="./assets/sample-icons/auth/eye-show.svg"></ion-icon>
         <ion-label class="tab-title">Asistentes</ion-label>
       </ion-tab-button>
     </ion-col>
     <ion-col size="4"> 
         <ion-tab-button [routerLink]="'/stands/' + evento">
-            <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+            <ion-icon src="./assets/sample-icons/side-menu/categories.svg"></ion-icon>
             <ion-label class="tab-title">Stands</ion-label>
           </ion-tab-button>
     </ion-col>
     <ion-col size="4"> 
         <ion-tab-button [routerLink]="'/conferencistas/' + evento">
-            <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+            <ion-icon src="./assets/sample-icons/side-menu/contact-card.svg"></ion-icon>
             <ion-label class="tab-title">Conferencistas</ion-label>
           </ion-tab-button>
     </ion-col>
@@ -98,13 +103,13 @@
   <ion-row>
       <ion-col size="4"> 
         <ion-tab-button  [routerLink]="'/agenda/' + evento">
-          <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+          <ion-icon src="./assets/sample-icons/side-menu/forms.svg"></ion-icon>
           <ion-label class="tab-title">Agenda</ion-label>
         </ion-tab-button>
       </ion-col>
       <ion-col size="4"> 
           <ion-tab-button [routerLink]="'/stands/' + evento">
-              <ion-icon src="./assets/sample-icons/tabs/notifications.svg"></ion-icon>
+              <ion-icon src="./assets/sample-icons/side-menu/login.svg"></ion-icon>
               <ion-label class="tab-title">Stands</ion-label>
             </ion-tab-button>
       </ion-col>
