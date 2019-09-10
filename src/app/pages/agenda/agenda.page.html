@@ -9,7 +9,7 @@
 
 <ion-content>
     <ion-card class="card card-ios  shadowCards heightCards borderCard marginBottomCard" *ngFor="let dataAgend of dataAgenda">
-      <ion-card-content  class="paddingCard">
+      <ion-card-content  class="paddingCard" [routerLink]="['/deta-agenda/', dataAgend.id]">
         <p><b>{{ dataAgend.titulo }}</b></p>
         <p>{{ dataAgend.hora_inicio }} {{ dataAgend.hora_cierre }}</p>
         <p>{{ dataAgend.dia_agenda }}</p>
