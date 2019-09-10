@@ -3,15 +3,15 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Log In</ion-title>
+    <ion-title>Ingreso</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="login-content">
   <h2 class="auth-title">
-    Welcome!
+    Bienvenido
     <br/>
-    Discover the new Ionic 4
+    Descubre el nuevo Gevents
   </h2>
   <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
     <ion-list class="inputs-list" lines="full">
@@ -42,21 +42,21 @@
       </div>
     </ion-list>
 
-    <ion-button class="login-btn" type="submit" expand="block" [disabled]="!loginForm.valid">Log In</ion-button>
+    <ion-button class="login-btn" type="submit" expand="block" [disabled]="!loginForm.valid">Ingresar</ion-button>
     <ion-row class="other-auth-options-row">
       <ion-button class="forgot-btn" fill="clear" [routerLink]="['/auth/forgot-password']">
-        Forgot Password?
+        Olvido su password?
       </ion-button>
       <ion-button class="signup-btn" fill="clear" [routerLink]="['/auth/signup']">
-        Sign Up!
+        Registro
       </ion-button>
     </ion-row>
   </form>
 
   <div class="social-auth-options">
     <p class="options-divider">Or</p>
-    <ion-button class="social-auth-btn facebook-auth-btn" expand="block" color="facebook" (click)="doFacebookLogin()">Log In with Facebook</ion-button>
-    <ion-button class="social-auth-btn google-auth-btn" expand="block" color="google" (click)="doGoogleLogin()">Log In with Google</ion-button>
-    <ion-button class="social-auth-btn twitter-auth-btn" expand="block" color="twitter" (click)="doTwitterLogin()">Log In with Twitter</ion-button>
+    <ion-button class="social-auth-btn facebook-auth-btn" expand="block" color="facebook" (click)="doFacebookLogin()">Ingreso con Facebook</ion-button>
+    <ion-button class="social-auth-btn google-auth-btn" expand="block" color="google" (click)="doGoogleLogin()">Ingreso con Google</ion-button>
+    <ion-button class="social-auth-btn twitter-auth-btn" expand="block" color="twitter" (click)="doTwitterLogin()">Ingreso con Twitter</ion-button>
   </div>
 </ion-content>

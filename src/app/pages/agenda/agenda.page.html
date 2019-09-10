@@ -1,15 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>agenda</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button ></ion-back-button>
+      </ion-buttons>
+      <ion-title>Agenda</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content>
     <ion-card class="card card-ios  shadowCards heightCards borderCard marginBottomCard" *ngFor="let dataAgend of dataAgenda">
-      <p>{{ dataAgend.titulo }}</p>
-      <p>{{ dataAgend.hora_inicio }}</p>
-      <p>{{ dataAgend.hora_cierre }}</p>
-      <p>{{ dataAgend.dia_agenda }}</p>
+      <ion-card-content  class="paddingCard">
+        <p><b>{{ dataAgend.titulo }}</b></p>
+        <p>{{ dataAgend.hora_inicio }} {{ dataAgend.hora_cierre }}</p>
+        <p>{{ dataAgend.dia_agenda }}</p>
+      </ion-card-content>
     </ion-card>
 
 </ion-content>

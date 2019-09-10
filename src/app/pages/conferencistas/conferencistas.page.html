@@ -1,41 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>conferencistas</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button ></ion-back-button>
+      </ion-buttons>
+      <ion-title>Conferencistas</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content>
-  <div >
-    <ion-card class="card card-ios  shadowCards heightCards borderCard marginBottomCard" *ngFor="let dataConferencista of dataConferencistas">
-      <ion-item class="item item-block item-ios">
-
-            <ion-grid class="grid NoPadding">
-              <ion-row class="row">
-                <ion-col class="col" col-3>
-                  <a [routerLink]="['/deta-conferencis/', dataConferencista.id]">
-                      <div>
-                          <div class="avatarCard sombraLogo">
-                            <img src="http://localhost/middleware/public/images/events/{{dataConferencista.foto_perfil}}">
-                            <!--  <img class=" detailsimgSpeaker"   src="assets/img/607x411.png"> -->
-                          </div>
-                      </div>
-                  </a>    
-                </ion-col>
-                <ion-col class="col">
-                    <a [routerLink]="['/deta-conferencis/', dataConferencista.id]">
-                  <div class="LongDivDot">
-                    <h2 class="LongTextDot"> {{dataConferencista.nombre + ' ' + dataConferencista.apellido}} </h2>
-                    <p>#Stand: {{ dataConferencista.cargo }}</p>
-                    <p>#Stand: {{ dataConferencista.compania }}</p>
-                  </div>
-                </a> 
-                </ion-col>
-               
-              </ion-row>
-
-            </ion-grid>
-
-      </ion-item>
+  <ion-card class="" *ngFor="let dataConferencista of dataConferencistas">
+      <ion-card-content  class="paddingCard">
+        <ion-row>
+            <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-conferencis/', dataConferencista.id]">
+                <div class="logoImgPeople animated tada shadowImg" height="120">
+                  <img class=" detailsimgSpeaker" src="http://localhost/middleware/public/images/events/{{dataConferencista.foto_perfil}}">
+                </div>
+            </ion-col>
+            <ion-col size="9" class="" [routerLink]="['/deta-conferencis/', dataConferencista.id]">
+              <div class="" >
+                  <h4> {{dataConferencista.nombre + ' ' + dataConferencista.apellido}} </h4>
+                  <p>{{ dataConferencista.cargo }}</p>
+                  <p>{{ dataConferencista.compania }}</p>
+              </div>
+            </ion-col>
+        </ion-row>
+      </ion-card-content>
     </ion-card>
-  </div>
 </ion-content>
