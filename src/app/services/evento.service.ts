@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const apiUrl = "http://localhost/middleware/public/api/";
+const apiUrl = "https://testing.gevents.co/middleware/public/api/";
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventoService {
 
-  public globalUrlImages: string = "http://localhost/middleware/public/images/events/"
+  public globalUrlImages: string = "https://testing.gevents.co/middleware/public/images/events/"
 
   constructor(private http: HttpClient) { }
 
@@ -69,7 +69,7 @@ export class EventoService {
     return this.http.get( apiUrl + 'get_expositores_detalle/' + idConferencis ,{ headers: httpHeaders }) 
   }
 
-  getAgendaServi(idEvento:any){
+  getAgendaServi(idEvento:any):Observable<any>{
     const httpHeaders = new HttpHeaders ({
       'Content-Type': 'application/json',
       'Accept': 'application/json' 
@@ -77,7 +77,7 @@ export class EventoService {
     return this.http.get( apiUrl + 'get_agendas_apk/' + idEvento ,{ headers: httpHeaders }) 
   }
 
-  getDetallesAgenda(agenda:any){
+  getDetallesAgenda(agenda:any):Observable<any>{
     const httpHeaders = new HttpHeaders ({
       'Content-Type': 'application/json',
       'Accept': 'application/json' 
@@ -85,12 +85,20 @@ export class EventoService {
     return this.http.get( apiUrl + 'get_agenda_detalle/' + agenda ,{ headers: httpHeaders }) 
   }
 
-  getPatrocinadorServi(idEvento:any){
+  getPatrocinadorServi(idEvento:any):Observable<any>{
     const httpHeaders = new HttpHeaders ({
       'Content-Type': 'application/json',
       'Accept': 'application/json' 
     });
     return this.http.get( apiUrl + 'get_patrocinadores_apk/' + idEvento ,{ headers: httpHeaders }) 
+  }
+
+  getDetallesPatrocina(patrocinador:any):Observable<any>{
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    return this.http.get( apiUrl + 'get_patrocinadores_detalle/' + patrocinador ,{ headers: httpHeaders }) 
   }
   
 }

@@ -26,9 +26,7 @@ export class HomePage implements OnInit {
         console.log(data)
         this.event = data.evento[0]
         this.banner = this.eventoService.globalUrlImages + data.banner['imagen']
-        this.icono = this.eventoService.globalUrlImages + data.icono['imagen']
         this.asistentes = data.asistentes
-        console.log(data)
       }, error =>{
         console.log("error");
       }

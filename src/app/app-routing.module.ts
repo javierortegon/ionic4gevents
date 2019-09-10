@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'deta-patrocina/:patroci', loadChildren: './pages/deta-patrocina/deta-patrocina.module#DetaPatrocinaPageModule' },
   { path: 'patrocinadores/:event', loadChildren: './pages/patrocinadores/patrocinadores.module#PatrocinadoresPageModule' },
   { path: 'deta-agenda/:agenda', loadChildren: './pages/deta-agenda/deta-agenda.module#DetaAgendaPageModule' },
   { path: 'agenda/:event', loadChildren: './pages/agenda/agenda.module#AgendaPageModule' },

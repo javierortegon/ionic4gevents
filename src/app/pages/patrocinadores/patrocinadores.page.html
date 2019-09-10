@@ -11,12 +11,12 @@
     <ion-card class="" *ngFor="let dataPatrocinador of dataPatrocinadores">
         <ion-card-content  class="paddingCard">
           <ion-row>
-              <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-conferencis/', dataPatrocinador.id]">
+              <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-patrocina/', dataPatrocinador.id]">
                   <div class="logoImgPeople animated tada shadowImg" height="120">
                     <img class=" detailsimgSpeaker" src="http://localhost/middleware/public/images/events/{{dataPatrocinador.imagen}}">
                   </div>
               </ion-col>
-              <ion-col size="9" class="" [routerLink]="['/deta-conferencis/', dataPatrocinador.id]">
+              <ion-col size="9" class="" [routerLink]="['/deta-patrocina/', dataPatrocinador.id]">
                 <div class="" >
                     <h4> {{dataPatrocinador.compania}} </h4>
                 </div>
