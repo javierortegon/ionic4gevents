@@ -7,6 +7,8 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
+
 <ion-content>
     <ion-card class="" *ngFor="let asistente of dataAssis">
         <ion-card-content  class="paddingCard">
@@ -18,10 +20,12 @@
                   </div>
                 </a>
               </ion-col>
-              <ion-col size="9" class="" [routerLink]="['/deta-asistente/', asistente.id]">
-                <div class="" >
-                  <b>{{asistente.nombre}}<br> {{asistente.apellido}}</b>
+              <ion-col class="contenTextAsistente" size="9" [routerLink]="['/deta-asistente/', asistente.id]">
+                <div class="ion-text-uppercase nombreAsistente">
+                  <b>{{asistente.nombre}} {{asistente.apellido}}</b>
                 </div>
+                <p>Empresa</p>
+                <p>Cargo</p>
               </ion-col>
           </ion-row>
         </ion-card-content>
