@@ -7,9 +7,10 @@
     </ion-toolbar>
   </ion-header>
 
-<ion-content>
+  <ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
 
-    <ion-card class="" *ngFor="let dataExpositor of dataExpositores">
+<ion-content>
+  <ion-card class="" *ngFor="let dataExpositor of dataExpositores">
         <ion-card-content  class="paddingCard">
           <ion-row>
               <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-stand/', dataExpositor.id]">
@@ -29,7 +30,5 @@
               </ion-col>
           </ion-row>
         </ion-card-content>
-      </ion-card>
-   
-
+  </ion-card>
 </ion-content>

@@ -14,18 +14,18 @@
         <ion-card-content  class="paddingCard">
           <ion-row>
               <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-asistente/', asistente.id]">
-                <a [routerLink]="['/deta-asistente/', asistente.id]">
+                
                   <div class="logoImgPeople animated tada shadowImg" height="120">
                     <img class=" detailsimgSpeaker" src="https://testing.gevents.co/middleware/public/images/events/user_avatar.jpg">
                   </div>
-                </a>
+              
               </ion-col>
               <ion-col class="contenTextAsistente" size="9" [routerLink]="['/deta-asistente/', asistente.id]">
                 <div class="ion-text-uppercase nombreAsistente">
                   <b>{{asistente.nombre}} {{asistente.apellido}}</b>
                 </div>
-                <p>Empresa</p>
-                <p>Cargo</p>
+                <p>{{asistente.compania}}</p>
+                <p>{{asistente.cargo}}</p>
               </ion-col>
           </ion-row>
         </ion-card-content>

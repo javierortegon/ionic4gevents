@@ -7,8 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-deta-asistente',
   templateUrl: './deta-asistente.page.html',
   styleUrls: [
-    './styles/real-state-details.page.scss',
-    './styles/real-state-details.shell.scss'
+    './deta-asistente.page.scss'
   ]
 })
 export class DetaAsistentePage implements OnInit {
