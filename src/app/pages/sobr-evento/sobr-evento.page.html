@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sobre Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="contenInfoAgendaHead">
+          <ion-col class="tituloAgenda" size="12">
+            <b>{{event.nombre}}</b>
+          </ion-col>
+
+          <ion-col size="12">
+            <p>
+              {{event.descripcion}}
+            </p>
+          </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
+  <ion-grid class="dataUsuario">
+
+      <ion-row class="ion-justify-content-start">
+          <ion-col size="12">
+            <div>
+                <h5>Fecha</h5>
+                <p>{{event.fecha_inicio}}</p>
+            </div>
+          </ion-col>
+      </ion-row>
+
+
+    <ion-row class="ion-justify-content-start">
+        <ion-col size="12">
+          <div>
+              <h5>Ubicacion</h5>
+              <p>{{event.lugar}}</p>
+          </div>
+        </ion-col>
+    </ion-row>
+    </ion-grid>
+</ion-content>

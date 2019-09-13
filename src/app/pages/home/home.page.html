@@ -24,6 +24,12 @@
   </ng-container>
   
   <ion-row class="contenMenuIcon">
+      <ion-col size="4"> 
+          <ion-tab-button [routerLink]="'/sobr-evento/' + evento">
+              <ion-icon src="./assets/sample-icons/food/multiple-users-silhouette.svg"></ion-icon>
+              <ion-label class="tab-title">Sobre Evento</ion-label>
+            </ion-tab-button>
+      </ion-col>
     <ion-col size="4"> 
       <ion-tab-button  [routerLink]="'/asistentes/' + evento">
         <ion-icon class="icono" src="./assets/sample-icons/auth/eye-show.svg"></ion-icon>
@@ -34,12 +40,6 @@
         <ion-tab-button [routerLink]="'/stands/' + evento">
             <ion-icon src="./assets/sample-icons/side-menu/categories.svg"></ion-icon>
             <ion-label class="tab-title">Stands</ion-label>
-          </ion-tab-button>
-    </ion-col>
-    <ion-col size="4"> 
-        <ion-tab-button [routerLink]="'/conferencistas/' + evento">
-            <ion-icon src="./assets/sample-icons/side-menu/contact-card.svg"></ion-icon>
-            <ion-label class="tab-title">Conferencistas</ion-label>
           </ion-tab-button>
     </ion-col>
   </ion-row>
@@ -57,21 +57,22 @@
               <ion-label class="tab-title">Patrocinadores</ion-label>
             </ion-tab-button>
       </ion-col>
-      <ion-col size="4"> 
-          <ion-tab-button [routerLink]="'/conferencistas/' + evento">
-              <ion-icon src="./assets/sample-icons/food/multiple-users-silhouette.svg"></ion-icon>
-              <ion-label class="tab-title">Sobre Evento</ion-label>
-            </ion-tab-button>
-      </ion-col>
+      
+    <ion-col size="4"> 
+        <ion-tab-button [routerLink]="'/conferencistas/' + evento">
+            <ion-icon src="./assets/sample-icons/side-menu/contact-card.svg"></ion-icon>
+            <ion-label class="tab-title">Conferencistas</ion-label>
+          </ion-tab-button>
+    </ion-col>
   </ion-row>
 
   <ion-row class="contenMenuIcon">
-    <ion-col size="4"> 
-      <ion-tab-button  [routerLink]="'/agenda/' + evento">
-        <ion-icon src="./assets/sample-icons/food/maps-and-flags.svg"></ion-icon>
-        <ion-label class="tab-title">Mapa</ion-label>
-      </ion-tab-button>
-    </ion-col>
+      <ion-col size="4"> 
+          <ion-tab-button [routerLink]="'/video-playlist/'">
+              <ion-icon src="./assets/sample-icons/food/play-button.svg"></ion-icon>
+              <ion-label class="tab-title">Video</ion-label>
+            </ion-tab-button>
+      </ion-col>
     <ion-col size="4"> 
         <ion-tab-button [routerLink]="'/patrocinadores/' + evento">
             <ion-icon src="./assets/sample-icons/food/elections.svg"></ion-icon>
@@ -135,12 +136,13 @@
         <ion-label class="tab-title">Preguntas</ion-label>
       </ion-tab-button>
     </ion-col>
+   
     <ion-col size="4"> 
-        <ion-tab-button [routerLink]="'/patrocinadores/' + evento">
-            <ion-icon src="./assets/sample-icons/food/play-button.svg"></ion-icon>
-            <ion-label class="tab-title">Video</ion-label>
-          </ion-tab-button>
-    </ion-col>
+        <ion-tab-button  [routerLink]="'/agenda/' + evento">
+          <ion-icon src="./assets/sample-icons/food/maps-and-flags.svg"></ion-icon>
+          <ion-label class="tab-title">Mapa</ion-label>
+        </ion-tab-button>
+      </ion-col>
     <ion-col size="4"> 
         <ion-tab-button [routerLink]="'/conferencistas/' + evento">
             <ion-icon src="./assets/sample-icons/food/gallery.svg"></ion-icon>
