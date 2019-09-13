@@ -5,10 +5,12 @@
       </ion-buttons>
       <ion-title>Patrocinadores</ion-title>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
+
+<ion-searchbar animated (ionChange)="buscar($event)"></ion-searchbar>
 
 <ion-content>
-    <ion-card class="" *ngFor="let dataPatrocinador of dataPatrocinadores">
+    <ion-card class="ConteDatosStands" *ngFor="let dataPatrocinador of dataPatrocinadores">
         <ion-card-content  class="paddingCard">
           <ion-row>
               <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-patrocina/', dataPatrocinador.id]">
@@ -16,10 +18,10 @@
                     <img class=" detailsimgSpeaker" src="https://testing.gevents.co/middleware/public/images/events/{{dataPatrocinador.imagen}}">
                   </div>
               </ion-col>
-              <ion-col size="9" class="" [routerLink]="['/deta-patrocina/', dataPatrocinador.id]">
-                <div class="" >
-                    <h4> {{dataPatrocinador.compania}} </h4>
-                </div>
+              <ion-col size="9" class="contenTextStands" [routerLink]="['/deta-patrocina/', dataPatrocinador.id]">
+                <div class="ion-text-uppercase nombreStand">
+                    <b>{{dataPatrocinador.compania}}</b>
+                  </div> 
               </ion-col>
           </ion-row>
         </ion-card-content>
