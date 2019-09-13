@@ -10,9 +10,9 @@
 <ion-content>
     <ion-card class="card card-ios  shadowCards heightCards borderCard marginBottomCard" *ngFor="let dataAgend of dataAgenda">
       <ion-card-content  class="paddingCard" [routerLink]="['/deta-agenda/', dataAgend.id]">
-        <p><b>{{ dataAgend.titulo }}</b></p>
-        <p>{{ dataAgend.hora_inicio }} {{ dataAgend.hora_cierre }}</p>
-        <p>{{ dataAgend.dia_agenda }}</p>
+        <p class="ion-text-uppercase tituloAgenda"><b>{{ dataAgend.titulo }}</b></p>
+        <p class="conteInfoAgenda"><ion-icon class="icono" src="./assets/sample-icons/food/calendar.svg"></ion-icon> {{ dataAgend.dia_agenda }}</p>
+        <p class="conteInfoAgenda"><ion-icon class="icono" src="./assets/sample-icons/food/clock.svg"></ion-icon> {{ dataAgend.hora_inicio }} {{ dataAgend.hora_cierre }}</p>
       </ion-card-content>
     </ion-card>
 

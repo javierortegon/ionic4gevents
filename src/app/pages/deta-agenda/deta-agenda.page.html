@@ -8,62 +8,95 @@
 </ion-header>
 
 <ion-content>
-  <ion-row>
-    <ion-col size="4">
-      <b>Titulo</b><br>
-      {{titulo}}
-    </ion-col>
-    <ion-col size="4">
-      <b>Hora Inicio</b><br>
-      {{horaInicio}}
-    </ion-col>
-    <ion-col size="4">
-      <b>Hora Fin</b><br>
-      {{horaCierre}}
-    </ion-col>
-  </ion-row>
+  <ion-grid>
+    <ion-row class="contenInfoAgendaHead">
+          <ion-col class="tituloAgenda" size="12">
+            <b>{{titulo}}</b>
+          </ion-col>
+          <ion-col size="12">
+              <p class="conteInfoAgenda">
+                <ion-icon class="icono" src="./assets/sample-icons/food/calendar.svg"></ion-icon> {{ dia }}
+                &nbsp;&nbsp;<ion-icon class="icono" src="./assets/sample-icons/food/clock.svg"></ion-icon> {{ horaInicio }}
+              </p>
+          </ion-col>
 
-  <ion-row>
-    <ion-col size="4">
-      <b>Dia</b><br>
-      {{dia}}
-    </ion-col>
-    <ion-col size="4">
-      <b>Ubicacion</b><br>
-      {{ubicacion}}
-    </ion-col>
-    <ion-col size="4">
-      <b>Capacidad</b><br>
-      {{capacidad}}
-    </ion-col>
-  </ion-row>
+          <ion-col size="12">
+            <p>
+                {{descripcion}}
+            </p>
+          </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <ion-row>
-      <ion-col size="12">
-        <b>Descripcion</b><br>
-        {{description}}
-      </ion-col>
-  </ion-row>
-  
-<h3>Conferencistas</h3>
+  <ion-grid class="dataUsuario">
+
+    <ion-row class="ion-justify-content-start">
+        <ion-col size="12">
+          <div>
+              <h5>Ubicacion</h5>
+              <p>{{ubicacion}}</p>
+          </div>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-start">
+          <ion-col size="12">
+            <div>
+                <h5>Capacidad</h5>
+                <p>{{capacidad}}</p>
+            </div>
+          </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-start">
+            <ion-col size="12">
+              <div>
+                  <h5>Compañia</h5>
+                  <p>{{capacidad}}</p>
+              </div>
+            </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-start">
+              <ion-col size="12">
+                <div>
+                    <h5>Link</h5>
+                    <p>{{capacidad}}</p>
+                </div>
+              </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-start">
+                <ion-col size="12">
+                  <div>
+                      <h5>Conferencistas</h5>
+                  </div>
+                </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 
   <ion-card class="" *ngFor="let dataConferencista of dataConferencistas">
       <ion-card-content  class="paddingCard">
         <ion-row>
             <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-conferencis/', dataConferencista.id]">
                 <div class="logoImgPeople animated tada shadowImg" height="120">
-                  <img class=" detailsimgSpeaker" src="http://localhost/middleware/public/images/events/{{dataConferencista.foto_perfil}}">
+                  <img class=" detailsimgSpeaker" src="https://testing.gevents.co/middleware/public/images/events/{{dataConferencista.foto_perfil}}">
                 </div>
             </ion-col>
             <ion-col size="9" class="" [routerLink]="['/deta-conferencis/', dataConferencista.id]">
-              <div class="" >
-                  <h4> {{dataConferencista.nombre + ' ' + dataConferencista.apellido}} </h4>
+              <div class="ion-text-uppercase nombreAsistente">
+                  <b> {{dataConferencista.nombre + ' ' + dataConferencista.apellido}} </b>
+              </div>
                   <p>{{ dataConferencista.cargo }}</p>
                   <p>{{ dataConferencista.compania }}</p>
-              </div>
+              
             </ion-col>
         </ion-row>
       </ion-card-content>
     </ion-card>
+
+
 
 </ion-content>
