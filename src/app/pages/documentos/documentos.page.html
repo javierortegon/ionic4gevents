@@ -11,10 +11,10 @@
   <ion-card class="" *ngFor="let documento of dataDocumentos">
     <ion-card-content  class="paddingCard">
       <ion-row>
-          <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-asistente/', documento.id]">
+          <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-documento/', documento.id]">
             <ion-icon  src="./assets/sample-icons/food/doc-file-format.svg"></ion-icon>
           </ion-col>
-          <ion-col class="" size="9" [routerLink]="['/deta-asistente/', documento.id]">
+          <ion-col class="" size="9" [routerLink]="['/deta-documento/', documento.id]">
             <div class="ion-text-uppercase nombreAsistente">
               <b>  {{documento.nombre}} </b>
             </div> 

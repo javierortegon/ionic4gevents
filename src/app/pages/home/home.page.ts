@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
+  anuncio: any[] = [];
   event: any[] = [];
   banner: string;
   icono: string;
@@ -32,12 +33,20 @@ export class HomePage implements OnInit {
     )
   }
 
-  goToAttendantPage(){
-
+  getAnuncios(){
+    this.eventoService.getAnunciosServi(2).subscribe(
+      data =>{
+        console.log(data)
+        this.anuncio = data.anuncios
+      }, error =>{
+        console.log("error");
+      }
+    )
   }
 
   ngOnInit() {
     this.getDataEvent()
+    this.getAnuncios()
   }
 
 }

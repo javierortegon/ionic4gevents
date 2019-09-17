@@ -10,6 +10,7 @@ const apiUrl = "https://testing.gevents.co/middleware/public/api/";
 export class EventoService {
 
   public globalUrlImages: string = "https://testing.gevents.co/middleware/public/images/events/"
+  public globalUrlDocuments: string = "https://testing.gevents.co/middleware/public/Documentos/"
 
   constructor(private http: HttpClient) { }
 
@@ -117,4 +118,21 @@ export class EventoService {
     });
     return this.http.get( apiUrl + 'get_documentos_apk/' + idEvento ,{ headers: httpHeaders }) 
   }
+
+  getDetallesDocumento(documento:any):Observable<any>{
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    return this.http.get( apiUrl + 'get_documentos_detalle/' + documento ,{ headers: httpHeaders }) 
+  } 
+
+  getAnunciosServi(idEvento:any):Observable<any>{
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    return this.http.get( apiUrl + 'get_anuncios_apk/' + idEvento ,{ headers: httpHeaders }) 
+  }
+
 }

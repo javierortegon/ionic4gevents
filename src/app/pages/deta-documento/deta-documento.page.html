@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Documentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="dataUsuario">
+    <ion-row class="ion-justify-content-start">
+      <ion-col size="12">
+        <div>
+            <h5>Resumen del Documento</h5>
+            <p>{{nombre}}</p>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div>
+            <h5>Documento</h5>
+        </div>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+    <ion-card class="" >
+      <ion-card-content  class="paddingCard">
+        <ion-row>
+            <ion-col size="2" class="paddingTopX" >
+              <ion-icon  src="./assets/sample-icons/food/doc-file-format.svg"></ion-icon>
+            </ion-col>
+            <ion-col class="" size="8" >
+              <div class="ion-text-uppercase nombreAsistente">
+                <b>  {{nombre}} </b>
+              </div> 
+            </ion-col>
+            <ion-col size="2" class="paddingTopX" >
+              <div (click)="download(ruta)">
+                <ion-icon ios="md-download" md="md-download"></ion-icon>
+              </div>
+            </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

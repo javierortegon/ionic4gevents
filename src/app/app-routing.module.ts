@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'deta-documento/:documen', loadChildren: './pages/deta-documento/deta-documento.module#DetaDocumentoPageModule' },
   { path: 'documentos/:event', loadChildren: './pages/documentos/documentos.module#DocumentosPageModule' },
   { path: 'sobr-evento/:event', loadChildren: './pages/sobr-evento/sobr-evento.module#SobrEventoPageModule' },
   { path: 'deta-patrocina/:patroci', loadChildren: './pages/deta-patrocina/deta-patrocina.module#DetaPatrocinaPageModule' },
