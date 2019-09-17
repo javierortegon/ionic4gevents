@@ -15,11 +15,8 @@
       <ion-row class="image-row">
         <ion-col size="12">
           <img class="add-overlay item-image" [src]="banner">
-          
         </ion-col>
       </ion-row>
-
-      
     </div>
   </ng-container>
   
@@ -73,12 +70,14 @@
               <ion-label class="tab-title">Video</ion-label>
             </ion-tab-button>
       </ion-col>
-    <ion-col size="4"> 
-        <ion-tab-button [routerLink]="'/patrocinadores/' + evento">
-            <ion-icon src="./assets/sample-icons/food/elections.svg"></ion-icon>
-            <ion-label class="tab-title">Encuestas</ion-label>
-          </ion-tab-button>
-    </ion-col>
+
+      <ion-col size="4"> 
+        <ion-tab-button  [routerLink]="'/documentos/' + evento">
+          <ion-icon src="./assets/sample-icons/food/file.svg"></ion-icon>
+          <ion-label class="tab-title">Documentos</ion-label>
+        </ion-tab-button>
+      </ion-col>
+
     <ion-col size="4"> 
         <ion-tab-button [routerLink]="'/conferencistas/' + evento">
             <ion-icon src="./assets/sample-icons/side-menu/notifications.svg"></ion-icon>
@@ -152,12 +151,13 @@
   </ion-row>
 
   <ion-row class="contenMenuIcon">
+    
     <ion-col size="4"> 
-      <ion-tab-button  [routerLink]="'/agenda/' + evento">
-        <ion-icon src="./assets/sample-icons/food/file.svg"></ion-icon>
-        <ion-label class="tab-title">Documentos</ion-label>
-      </ion-tab-button>
-    </ion-col>
+      <ion-tab-button [routerLink]="'/patrocinadores/' + evento">
+          <ion-icon src="./assets/sample-icons/food/elections.svg"></ion-icon>
+          <ion-label class="tab-title">Encuestas</ion-label>
+        </ion-tab-button>
+  </ion-col>
     <ion-col size="4"> 
         <ion-tab-button [routerLink]="'/patrocinadores/' + evento">
             <ion-icon src="./assets/sample-icons/food/airplane-travelling-around-earth.svg"></ion-icon>

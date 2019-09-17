@@ -13,6 +13,15 @@ export class EventoService {
 
   constructor(private http: HttpClient) { }
 
+  login(idEvento:any):Observable<any>{
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    return this.http.get( apiUrl + 'get_menu_event_con_apk1/' + idEvento ,{ headers: httpHeaders }) 
+  }
+
+
   getEventServi(idEvento:any ):Observable<any>{
     const httpHeaders = new HttpHeaders ({
       'Content-Type': 'application/json',
@@ -101,4 +110,11 @@ export class EventoService {
     return this.http.get( apiUrl + 'get_patrocinadores_detalle/' + patrocinador ,{ headers: httpHeaders }) 
   }
   
+  getDocumentosServi(idEvento:any):Observable<any>{
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    return this.http.get( apiUrl + 'get_documentos_apk/' + idEvento ,{ headers: httpHeaders }) 
+  }
 }
