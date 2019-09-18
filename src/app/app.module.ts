@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -42,8 +43,10 @@ export function createTranslateLoader(http: HttpClient) {
     })
   ],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    InAppBrowser
   ],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule {}

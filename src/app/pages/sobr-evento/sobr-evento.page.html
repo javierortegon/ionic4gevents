@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content>
+
   <ion-grid>
     <ion-row class="contenInfoAgendaHead">
           <ion-col class="tituloAgenda" size="12">
@@ -34,7 +35,6 @@
           </ion-col>
       </ion-row>
 
-
     <ion-row class="ion-justify-content-start">
         <ion-col size="12">
           <div>
@@ -43,5 +43,23 @@
           </div>
         </ion-col>
     </ion-row>
+
+    <ion-row class="ion-justify-content-start">
+        <ion-col size="12">
+          <div>
+              <h5>Redes Sociales</h5>
+              <p>
+                <a (click)="openF()">Facebook</a>
+              </p>
+              <p>
+                <a (click)="openT()">Twitter</a>
+              </p>
+              <p>
+                <a (click)="openI()">Instagram</a>
+              </p>
+          </div>
+        </ion-col>
+    </ion-row>
+
     </ion-grid>
 </ion-content>

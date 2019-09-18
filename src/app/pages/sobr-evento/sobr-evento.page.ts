@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventoService } from './../../services/evento.service';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-sobr-evento',
@@ -16,7 +17,7 @@ export class SobrEventoPage implements OnInit {
   //variable temporal
   evento: any = 2
 
-  constructor(public eventoService: EventoService) { }
+  constructor(public eventoService: EventoService, private iab: InAppBrowser) { }
 
   getDataEvent(){
     this.eventoService.getEventServi(2).subscribe(
@@ -29,6 +30,26 @@ export class SobrEventoPage implements OnInit {
         console.log("error");
       }
     )
+  }
+
+  openBlank() {
+    this.iab.create(`https://jamibot.com`, `_blank`);
+  }
+
+  openF(){
+    this.iab.create(`https://Facebook.com`, `_blank`);
+  }
+
+  openT(){
+    this.iab.create(`http://twitter.com`, `_blank`);
+  }
+
+  openI(){
+    this.iab.create(`http://instagram.com`, `_blank`);
+  }
+
+  openSystem() {
+    this.iab.create(`https://jamibot.com`, `_system`);
   }
 
   ngOnInit() {
