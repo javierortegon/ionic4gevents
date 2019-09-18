@@ -1,6 +1,7 @@
 import { EventoService } from './../../services/evento.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,9 @@ export class HomePage implements OnInit {
   //variable temporal
   evento: any = 2
 
-  constructor(public eventoService: EventoService, public menu: MenuController) { }
+  constructor(public eventoService: EventoService,
+    private iab: InAppBrowser, 
+    public menu: MenuController) { }
 
   getDataEvent(){
     this.eventoService.getEventServi(2).subscribe(
@@ -47,6 +50,10 @@ export class HomePage implements OnInit {
 
   ionViewWillEnter() {
     this.menu.enable(true);
+  }
+
+  openEncuesta(){
+    this.iab.create(`https://es.surveymonkey.com/r/6VVFVN8`, `_blank`);
   }
 
   ngOnInit() {

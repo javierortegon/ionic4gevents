@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Plugins } from '@capacitor/core';
 const { SplashScreen } = Plugins;
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-root',
@@ -65,7 +66,7 @@ export class AppComponent {
 
   textDir = 'ltr';
 
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, private iab: InAppBrowser) {
     this.initializeApp();
     this.setLanguage();
   }
@@ -90,6 +91,10 @@ export class AppComponent {
     // this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
     //   this.textDir = (event.lang === 'ar' || event.lang === 'iw') ? 'rtl' : 'ltr';
     // });
+  }
+
+  openEncuesta(){
+    this.iab.create(`https://es.surveymonkey.com/r/6VVFVN8`, `_blank`);
   }
 
 }

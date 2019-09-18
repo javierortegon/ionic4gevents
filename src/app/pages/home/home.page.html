@@ -153,7 +153,7 @@
   <ion-row class="contenMenuIcon">
     
     <ion-col size="4"> 
-      <ion-tab-button [routerLink]="'/patrocinadores/' + evento">
+      <ion-tab-button (click)="openEncuesta()">
           <ion-icon src="./assets/sample-icons/food/elections.svg"></ion-icon>
           <ion-label class="tab-title">Encuestas</ion-label>
         </ion-tab-button>

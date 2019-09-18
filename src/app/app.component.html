@@ -19,7 +19,7 @@
         <ion-list>
           <ion-list-header>Menu</ion-list-header>
           <ion-menu-toggle auto-hide="false" >
-            <ion-item [routerLink]="homeNew">
+            <ion-item (click)="openEncuesta()">
               <ion-icon slot="start" src="./assets/sample-icons/side-men"></ion-icon>
               <ion-label>
                Home
