@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventoService } from './../../services/evento.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-stands',
@@ -9,7 +10,7 @@ import { EventoService } from './../../services/evento.service';
 export class StandsPage implements OnInit {
   dataExpositores: any[] = [];
 
-  constructor(public api: EventoService) {
+  constructor(public api: EventoService, public menu: MenuController) {
   }
 
   getStands(){
@@ -21,6 +22,10 @@ export class StandsPage implements OnInit {
       ,error =>{
         console.log("noo");
       })
+  }
+
+  ionViewWillEnter() {
+    this.menu.enable(true);
   }
 
   ngOnInit() {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventoService } from './../../services/evento.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sobr-evento',
@@ -17,7 +18,9 @@ export class SobrEventoPage implements OnInit {
   //variable temporal
   evento: any = 2
 
-  constructor(public eventoService: EventoService, private iab: InAppBrowser) { }
+  constructor(public eventoService: EventoService, 
+    public menu: MenuController,
+    private iab: InAppBrowser) { }
 
   getDataEvent(){
     this.eventoService.getEventServi(2).subscribe(
@@ -50,6 +53,10 @@ export class SobrEventoPage implements OnInit {
 
   openSystem() {
     this.iab.create(`https://jamibot.com`, `_system`);
+  }
+
+  ionViewWillEnter() {
+    this.menu.enable(true);
   }
 
   ngOnInit() {

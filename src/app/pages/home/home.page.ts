@@ -1,5 +1,6 @@
 import { EventoService } from './../../services/evento.service';
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomePage implements OnInit {
   //variable temporal
   evento: any = 2
 
-  constructor(public eventoService: EventoService) { }
+  constructor(public eventoService: EventoService, public menu: MenuController) { }
 
   getDataEvent(){
     this.eventoService.getEventServi(2).subscribe(
@@ -42,6 +43,10 @@ export class HomePage implements OnInit {
         console.log("error");
       }
     )
+  }
+
+  ionViewWillEnter() {
+    this.menu.enable(true);
   }
 
   ngOnInit() {

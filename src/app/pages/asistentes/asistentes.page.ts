@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventoService } from './../../services/evento.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-asistentes',
@@ -12,8 +13,9 @@ export class AsistentesPage implements OnInit {
   dataAssis: any[] = [];
 
   constructor(
-    public api: EventoService
-    ) { }
+    public api: EventoService,
+    public menu: MenuController
+  ) { }
 
   getAsistentes(){
     this.api.getAsistEventServi(2).subscribe(
@@ -27,9 +29,12 @@ export class AsistentesPage implements OnInit {
       })
   }
 
+  ionViewWillEnter() {
+    this.menu.enable(true);
+  }
+
   ngOnInit() {
     this.getAsistentes()
   }
-
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EventoService } from './../../services/evento.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-conferencistas',
@@ -12,7 +13,9 @@ export class ConferencistasPage implements OnInit {
   dataConferencistas: any[] = [];
 
 
-  constructor(private route: ActivatedRoute, public eventoService: EventoService) { }
+  constructor(private route: ActivatedRoute,
+    public menu: MenuController, 
+    public eventoService: EventoService) { }
 
   getConferencistas(){
     this.eventoService.getConferencistasServi(2).subscribe(
@@ -23,6 +26,10 @@ export class ConferencistasPage implements OnInit {
         console.log("Error: " + error);
       }
     )
+  }
+
+  ionViewWillEnter() {
+    this.menu.enable(true);
   }
 
   ngOnInit() {
