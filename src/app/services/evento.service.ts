@@ -143,4 +143,12 @@ export class EventoService {
     return this.http.get( apiUrl + 'get_preguntas_apk/' + idEvento ,{ headers: httpHeaders }) 
   }
 
+  getDetallesPregunta(documento:any):Observable<any>{
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    return this.http.get( apiUrl + 'get_pregunta_detalle/' + documento ,{ headers: httpHeaders }) 
+  } 
+
 }

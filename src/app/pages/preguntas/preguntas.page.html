@@ -18,10 +18,10 @@
   <ion-card class="" *ngFor="let pregunta of dataPreguntas">
     <ion-card-content  class="paddingCard">
       <ion-row>
-          <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-documento/', pregunta.id]">
+          <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-pregunta/', pregunta.id]">
             <ion-icon  src="./assets/sample-icons/food/elections.svg"></ion-icon>
           </ion-col>
-          <ion-col class="" size="9" [routerLink]="['/deta-documento/', pregunta.id]">
+          <ion-col class="" size="9" [routerLink]="['/deta-pregunta/', pregunta.id]">
             <div class="ion-text-uppercase nombreAsistente">
               <b>  {{pregunta.pregunta}} </b>
             </div> 

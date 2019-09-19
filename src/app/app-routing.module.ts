@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'deta-pregunta/:pregunta', loadChildren: './pages/deta-pregunta/deta-pregunta.module#DetaPreguntaPageModule' },
   { path: 'preguntas/:event', loadChildren: './pages/preguntas/preguntas.module#PreguntasPageModule' },
   { path: 'deta-documento/:documen', loadChildren: './pages/deta-documento/deta-documento.module#DetaDocumentoPageModule' },
   { path: 'documentos/:event', loadChildren: './pages/documentos/documentos.module#DocumentosPageModule' },
@@ -33,7 +34,6 @@ const routes: Routes = [
   { path: 'maps', loadChildren: './maps/maps.module#MapsPageModule' },
   { path: 'video-playlist', loadChildren: './video-playlist/video-playlist.module#VideoPlaylistPageModule' },
   { path: '**', redirectTo: 'page-not-found' },
-  { path: 'deta-pregunta', loadChildren: './pages/deta-pregunta/deta-pregunta.module#DetaPreguntaPageModule' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

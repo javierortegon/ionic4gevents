@@ -1,9 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>deta-pregunta</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button ></ion-back-button>
+      </ion-buttons>
+      <ion-title>Preguntas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
 
 <ion-content>
-
+   <ion-grid class="dataUsuario">
+      <ion-row class="ion-justify-content-start">
+            <ion-col size="12">
+              <div>
+                  <h5>Pregunta</h5>
+                  <p>{{pregunta}}</p>
+              </div>
+            </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-start">
+            <ion-col size="12">
+              <div>
+                  <h5>Respuesta</h5>
+                  <p>{{respuesta}}</p>
+              </div>
+            </ion-col>
+      </ion-row>
+    </ion-grid>
 </ion-content>
