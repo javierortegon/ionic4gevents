@@ -34,6 +34,7 @@ const routes: Routes = [
   { path: 'maps', loadChildren: './maps/maps.module#MapsPageModule' },
   { path: 'video-playlist', loadChildren: './video-playlist/video-playlist.module#VideoPlaylistPageModule' },
   { path: '**', redirectTo: 'page-not-found' },
+  { path: 'modal-pregunta', loadChildren: './pages/modal-pregunta/modal-pregunta.module#ModalPreguntaPageModule' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

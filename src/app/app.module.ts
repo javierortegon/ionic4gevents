@@ -19,6 +19,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
+import { ModalPreguntaPageModule } from './pages/modal-pregunta/modal-pregunta.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -32,6 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
     ReactiveFormsModule,
     AppRoutingModule,
     ComponentsModule,
+    ModalPreguntaPageModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     HttpClientModule,
     TranslateModule.forRoot({

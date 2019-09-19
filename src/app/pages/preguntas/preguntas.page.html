@@ -8,12 +8,15 @@
 </ion-header>
 
 <ion-content>
+
     <ion-item>
         <ion-label>Conferencia</ion-label>
         <ion-select placeholder="Select One" >
           <ion-select-option *ngFor="let conferencias of dataConferencias" [value]="conferencias.id">{{conferencias.titulo}}</ion-select-option>
         </ion-select>
       </ion-item>
+
+      <ion-button (click)="openModal()">Escribir Pregunta</ion-button>
 
   <ion-card class="" *ngFor="let pregunta of dataPreguntas">
     <ion-card-content  class="paddingCard">
