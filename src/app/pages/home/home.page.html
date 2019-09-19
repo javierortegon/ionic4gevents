@@ -175,7 +175,22 @@
 </ion-content>
 
 <ion-footer>
-  <a href="{{anuncio.link}}">
-    <img src="https://testing.gevents.co/middleware/public/images/events/{{ anuncio.imagen }}" alt="">
-  </a>
+    <ion-slides [options]="mySlideOptions">
+        <ion-slide>
+          <a href="{{anuncio.link}}">
+            <img src="https://testing.gevents.co/middleware/public/images/events/{{ anuncio.imagen }}" alt="">
+          </a>
+        </ion-slide>
+        <ion-slide>
+            <a href="{{anuncio.link}}">
+                <img src="https://testing.gevents.co/middleware/public/images/events/anuncio2.jpg" alt="">
+              </a>
+        </ion-slide>
+        <ion-slide>
+            <a href="{{anuncio.link}}">
+                <img src="https://testing.gevents.co/middleware/public/images/events/anuncio3.jpg" alt="">
+              </a>
+        </ion-slide>
+      </ion-slides>
+  
 </ion-footer>

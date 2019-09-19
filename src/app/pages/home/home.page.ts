@@ -12,6 +12,11 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 })
 export class HomePage implements OnInit {
 
+  mySlideOptions = {
+    initialSlide: 0,
+    autoplay:true
+    };
+
   anuncio: any[] = [];
   event: any[] = [];
   banner: string;
