@@ -18,7 +18,7 @@
 
       <ion-button (click)="openModal()">Escribir Pregunta</ion-button>
 
-  <ion-card class="" *ngFor="let pregunta of dataPreguntas">
+  <ion-card scrollY="true" class="" *ngFor="let pregunta of dataPreguntas">
     <ion-card-content  class="paddingCard">
       <ion-row>
           <ion-col size="3" class="paddingTopX" [routerLink]="['/deta-pregunta/', pregunta.id]">

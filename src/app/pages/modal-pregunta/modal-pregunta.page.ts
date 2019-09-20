@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import { EventoService } from './../../services/evento.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal-pregunta',
@@ -13,7 +14,9 @@ export class ModalPreguntaPage implements OnInit {
   idconfe: any
   dataConferencias: any[] = [];
 
-  constructor(private modalController: ModalController, public eventoService: EventoService) { }
+  constructor(private modalController: ModalController,
+    public alertCtrl: AlertController, 
+    public eventoService: EventoService) { }
 
   async closeModal() {
     const onClosedData: string = "Wrapped Up!";
@@ -33,10 +36,14 @@ export class ModalPreguntaPage implements OnInit {
   }
 
   registroPregunta(){
+    var mensaje = "";
     this.eventoService.postPreguntasConferencia( this.idconfe, 1, this.pregunta ).subscribe(
       data =>{
         //this.dataConferencias = data['conferencias']
         console.log(data)
+        mensaje = "Pregunta registrada"
+        this.presentAlert(mensaje);
+        this.closeModal()
       }
       ,error =>{
         console.log("Error: " + error);
@@ -51,6 +58,15 @@ export class ModalPreguntaPage implements OnInit {
 
   ngOnInit() {
     this.getPatrocinadores()
+  }
+
+  async presentAlert(mensaje: string) {
+    const alert = await this.alertCtrl.create({
+      header: 'Gevents',
+      message: mensaje,
+      buttons: ['OK']
+    });
+    await alert.present();
   }
 
 }
