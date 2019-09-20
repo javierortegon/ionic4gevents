@@ -9,6 +9,8 @@ import { EventoService } from './../../services/evento.service';
 })
 export class ModalPreguntaPage implements OnInit {
 
+  pregunta: any
+  idconfe: any
   dataConferencias: any[] = [];
 
   constructor(private modalController: ModalController, public eventoService: EventoService) { }
@@ -23,6 +25,18 @@ export class ModalPreguntaPage implements OnInit {
       data =>{
         this.dataConferencias = data['conferencias']
         console.log(this.dataConferencias)
+      }
+      ,error =>{
+        console.log("Error: " + error);
+      }
+    )
+  }
+
+  registroPregunta(){
+    this.eventoService.postPreguntasConferencia( this.idconfe, 1, this.pregunta ).subscribe(
+      data =>{
+        //this.dataConferencias = data['conferencias']
+        console.log(data)
       }
       ,error =>{
         console.log("Error: " + error);

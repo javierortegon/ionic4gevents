@@ -5,16 +5,16 @@
 </ion-header>
 
 <ion-content>
-    <form #form="ngForm" (ngSubmit)="register(form)">
+    <form #form="ngForm" (ngSubmit)="registroPregunta(form)">
         <ion-item>
             <ion-label>Conferencia</ion-label>
-            <ion-select interface="popover">
+            <ion-select [(ngModel)]="idconfe" name="idconfe" interface="popover">
               <ion-select-option *ngFor="let conferencias of dataConferencias" [value]="conferencias.id">{{conferencias.titulo}}</ion-select-option>
             </ion-select>
           </ion-item>
         <ion-item>
             <ion-label position="floating">Pregunta</ion-label>
-            <ion-textarea></ion-textarea>
+            <ion-textarea [(ngModel)]="pregunta" name="pregunta"></ion-textarea>
         </ion-item>
         <div class="ion-padding">
             <ion-button expand="block" type="submit" class="ion-no-margin">Crear</ion-button>

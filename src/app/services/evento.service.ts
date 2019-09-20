@@ -159,4 +159,20 @@ export class EventoService {
     return this.http.get( apiUrl + 'get_preguntas_filtro/'+ evento +'/'+ conferencia  ,{ headers: httpHeaders }) 
   }
 
+  postPreguntasConferencia(conferencia:any, usuario:any, pregunta:any):Observable<any>{
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer '+ 'dssdasd'
+    });
+
+    let postData = {
+      "conferencia": conferencia,
+      "usuario": 1,
+      "pregunta": pregunta
+    }
+
+    return this.http.post( apiUrl + 'save_pregunta_conferencia', postData ,{ headers: httpHeaders }) 
+  }
+
 }
