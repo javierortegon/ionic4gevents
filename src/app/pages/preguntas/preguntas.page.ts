@@ -14,12 +14,12 @@ export class PreguntasPage implements OnInit {
 
   dataPreguntas: any[] = [];
   dataConferencias: any[] = [];
-
   dataReturned:any;
+  conferencia: any
 
   constructor(public menu: MenuController, public eventoService: EventoService, public modalController: ModalController) { }
 
-  getPatrocinadores(){
+  getPreguntas(){
     this.eventoService.getPreguntasServi(2).subscribe(
       data =>{
         this.dataPreguntas = data['preguntas']
@@ -30,6 +30,26 @@ export class PreguntasPage implements OnInit {
         console.log("Error: " + error);
       }
     )
+  }
+
+  getPreguntasConferencia(conferencia, evento){
+    this.eventoService.getPreguntasConferencia(conferencia,2).subscribe(
+      data =>{
+        this.dataPreguntas = data['preguntas']
+        console.log(this.dataPreguntas)
+        this.dataConferencias = data['conferencias']
+      }
+      ,error =>{
+        console.log("Error: " + error);
+      }
+    )
+  }
+
+  selectConference(){
+    console.log('cambio')
+    console.log(this.conferencia);
+    this.getPreguntasConferencia(this.conferencia, 2)
+    
   }
 
   async openModal() {
@@ -56,7 +76,7 @@ export class PreguntasPage implements OnInit {
   }
 
   ngOnInit() {
-    this.getPatrocinadores()
+    this.getPreguntas()
   }
 
 }

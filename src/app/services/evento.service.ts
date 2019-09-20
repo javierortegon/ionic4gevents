@@ -149,6 +149,14 @@ export class EventoService {
       'Accept': 'application/json' 
     });
     return this.http.get( apiUrl + 'get_pregunta_detalle/' + documento ,{ headers: httpHeaders }) 
-  } 
+  }
+  
+  getPreguntasConferencia(conferencia:any, evento:any):Observable<any>{
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    return this.http.get( apiUrl + 'get_preguntas_filtro/'+ evento +'/'+ conferencia  ,{ headers: httpHeaders }) 
+  }
 
 }

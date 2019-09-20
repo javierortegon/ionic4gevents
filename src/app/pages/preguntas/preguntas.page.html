@@ -11,7 +11,7 @@
 
     <ion-item>
         <ion-label>Conferencia</ion-label>
-        <ion-select placeholder="Select One" >
+        <ion-select [(ngModel)]="conferencia" placeholder="Select One" (ionChange)="selectConference($event)">
           <ion-select-option *ngFor="let conferencias of dataConferencias" [value]="conferencias.id">{{conferencias.titulo}}</ion-select-option>
         </ion-select>
       </ion-item>
