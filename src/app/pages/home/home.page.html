@@ -78,33 +78,35 @@
         </ion-tab-button>
       </ion-col>
 
-    <ion-col size="4"> 
-        <ion-tab-button [routerLink]="'/conferencistas/' + evento">
-            <ion-icon src="./assets/sample-icons/side-menu/notifications.svg"></ion-icon>
-            <ion-label class="tab-title">Noticias</ion-label>
-          </ion-tab-button>
-    </ion-col>
-  </ion-row>
-
-  <ion-row class="contenMenuIcon">
-    <ion-col size="4"> 
-      <ion-tab-button  [routerLink]="'/asistentes/' + evento">
-        <ion-icon class="icono" src="./assets/sample-icons/food/ticket.svg"></ion-icon>
-        <ion-label class="tab-title">Boletas</ion-label>
-      </ion-tab-button>
-    </ion-col>
-    <ion-col size="4"> 
-        <ion-tab-button [routerLink]="'/stands/' + evento">
-            <ion-icon src="./assets/sample-icons/food/qr-code.svg"></ion-icon>
-            <ion-label class="tab-title">QR</ion-label>
-          </ion-tab-button>
-    </ion-col>
-    <ion-col size="4"> 
-        <ion-tab-button [routerLink]="'/conferencistas/' + evento">
+      <ion-col size="4"> 
+        <ion-tab-button [routerLink]="'/asistentes/' + evento">
             <ion-icon src="./assets/sample-icons/food/link.svg"></ion-icon>
             <ion-label class="tab-title">Networking</ion-label>
           </ion-tab-button>
     </ion-col>
+    
+  </ion-row>
+
+  <ion-row class="contenMenuIcon">
+      <ion-col size="4"> 
+          <ion-tab-button  [routerLink]="'/preguntas/' + evento">
+            <ion-icon src="./assets/sample-icons/food/question-mark.svg"></ion-icon>
+            <ion-label class="tab-title">Preguntas</ion-label>
+          </ion-tab-button>
+        </ion-col>
+        <ion-col size="4"> 
+            <ion-tab-button (click)="openEncuesta()">
+                <ion-icon src="./assets/sample-icons/food/elections.svg"></ion-icon>
+                <ion-label class="tab-title">Encuestas</ion-label>
+              </ion-tab-button>
+        </ion-col>
+   
+    <ion-col size="4"> 
+      <ion-tab-button [routerLink]="'/conferencistas/' + evento">
+          <ion-icon src="./assets/sample-icons/side-menu/notifications.svg"></ion-icon>
+          <ion-label class="tab-title">Noticias</ion-label>
+        </ion-tab-button>
+  </ion-col>
   </ion-row>
 
   <ion-row class="contenMenuIcon">
@@ -129,13 +131,12 @@
   </ion-row>
 
   <ion-row class="contenMenuIcon">
-    <ion-col size="4"> 
-      <ion-tab-button  [routerLink]="'/preguntas/' + evento">
-        <ion-icon src="./assets/sample-icons/food/question-mark.svg"></ion-icon>
-        <ion-label class="tab-title">Preguntas</ion-label>
-      </ion-tab-button>
-    </ion-col>
-   
+      <ion-col size="4"> 
+          <ion-tab-button  [routerLink]="'/asistentes/' + evento">
+            <ion-icon class="icono" src="./assets/sample-icons/food/ticket.svg"></ion-icon>
+            <ion-label class="tab-title">Boletas</ion-label>
+          </ion-tab-button>
+        </ion-col>
     <ion-col size="4"> 
         <ion-tab-button  [routerLink]="'/agenda/' + evento">
           <ion-icon src="./assets/sample-icons/food/maps-and-flags.svg"></ion-icon>
@@ -151,13 +152,12 @@
   </ion-row>
 
   <ion-row class="contenMenuIcon">
-    
-    <ion-col size="4"> 
-      <ion-tab-button (click)="openEncuesta()">
-          <ion-icon src="./assets/sample-icons/food/elections.svg"></ion-icon>
-          <ion-label class="tab-title">Encuestas</ion-label>
-        </ion-tab-button>
-  </ion-col>
+      <ion-col size="4"> 
+          <ion-tab-button [routerLink]="'/stands/' + evento">
+              <ion-icon src="./assets/sample-icons/food/qr-code.svg"></ion-icon>
+              <ion-label class="tab-title">QR</ion-label>
+            </ion-tab-button>
+      </ion-col>
     <ion-col size="4"> 
         <ion-tab-button [routerLink]="'/patrocinadores/' + evento">
             <ion-icon src="./assets/sample-icons/food/airplane-travelling-around-earth.svg"></ion-icon>
