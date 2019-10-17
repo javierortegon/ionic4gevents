@@ -9,6 +9,9 @@ import { Platform } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 
 
+import { UsuarioService } from './../services/usuario.service';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -39,7 +42,8 @@ export class LoginPage implements OnInit {
 		public loadingController: LoadingController,
 		private platform: Platform,
 		public alertController: AlertController,
-    public menu: MenuController
+    public menu: MenuController,
+    public usuarioService: UsuarioService
   ) {
     this.loginForm = new FormGroup({
       'email': new FormControl('test@test.com', Validators.compose([
@@ -100,8 +104,43 @@ export class LoginPage implements OnInit {
   }
 
   doLogin(): void {
-    console.log('do Log In');
-    this.router.navigate(['homeNew']);
+    this.usuarioService.loginPost(this.loginForm.get('email').value, this.loginForm.get('password').value).subscribe(
+       
+      data =>{
+        if (data !== null && data !== undefined) {
+          this.nativeStorage.setItem('token', data.access_token)
+          this.nativeStorage.getItem('token').then(
+            data => console.log(data),
+            error => console.error(error)
+          )
+          this.router.navigate(['homeNew']);
+          /* this.router.navigateByUrl('/events-lista');
+          this.api.setToken(data.access_token);
+          this.api.setId( data.user.id);
+          this.api.datosPersonales(data.user.email, data.user.celular); */
+        }else{
+         console.log('datos malos')
+        }
+        
+      }, error => {
+        let error_text = ''
+        switch (error.status) {
+          case 401:
+            error_text = "Usuario o contraseña incorrecta"
+            break
+
+          case 500:
+            error_text = "Hubo un problema de nuestro lado Inténtelo mas tarde"
+            break
+
+          default:
+            error_text = "Hubo un problema inténtelo mas tarde"
+            break
+        }
+      }
+    ) 
+    console.log(this.loginForm.get('email').value);
+    console.log(this.loginForm.get('password').value);
   }
 
   goToForgotPassword(): void {

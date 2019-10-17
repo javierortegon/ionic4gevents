@@ -32,7 +32,6 @@ export class HomePage implements OnInit {
   getDataEvent(){
     this.eventoService.getEventServi(2).subscribe(
       data =>{
-        console.log(data)
         this.event = data.evento[0]
         this.banner = this.eventoService.globalUrlImages + data.banner['imagen']
         this.asistentes = data.asistentes
@@ -45,7 +44,6 @@ export class HomePage implements OnInit {
   getAnuncios(){
     this.eventoService.getAnunciosServi(2).subscribe(
       data =>{
-        console.log(data)
         this.anuncio = data.anuncios
       }, error =>{
         console.log("error");
