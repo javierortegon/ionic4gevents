@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+    <ion-list>
+      <ion-item>
+        <ion-label>Mensajes</ion-label>
+        <ion-toggle formControlName="mensajes" slot="start" name="blueberry" ></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Citas</ion-label>
+        <ion-toggle formControlName="citas" slot="start" name="blueberry" ></ion-toggle>
+      </ion-item>
+          <ion-button class="login-btn" type="submit" expand="block" >Guardar</ion-button>
+    
+    </ion-list>
+  </form>
+</ion-content>

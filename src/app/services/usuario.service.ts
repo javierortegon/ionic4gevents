@@ -18,15 +18,22 @@ export class UsuarioService {
       'Content-Type': 'application/json',
       'Accept': 'application/json' 
     });
-
     const path =  urlApi + "login_user_cors";
-
     return this.http.post(path,{
       email: emailPost,
       password: passwordPost,
       tipo: 5,
       remember_me: true
       },{ headers: httpHeaders }) 
+  }
+
+  getDataProfile(asistente:any, evento:any){
+    const httpHeaders = new HttpHeaders ({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    });
+    const path =  urlApi + "get_data_profile_assis/" + asistente + "/" + evento;
+    return this.http.get(path,{ headers: httpHeaders }) 
   }
 
 }
